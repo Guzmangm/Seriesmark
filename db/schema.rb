@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121102948) do
+ActiveRecord::Schema.define(version: 20140121143509) do
 
   create_table "genres", force: true do |t|
     t.string   "title"

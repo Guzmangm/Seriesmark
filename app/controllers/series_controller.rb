@@ -4,7 +4,7 @@ class SeriesController < ApplicationController
   # GET /series
   # GET /series.json
   def index
-    @series = Serie.all
+    @series = Series.all
   end
 
   # GET /series/1
@@ -14,7 +14,7 @@ class SeriesController < ApplicationController
 
   # GET /series/new
   def new
-    @series = Serie.new
+    @series = Series.new
   end
 
   # GET /series/1/edit
@@ -24,11 +24,11 @@ class SeriesController < ApplicationController
   # POST /series
   # POST /series.json
   def create
-    @series = Serie.new(series_params)
+    @series = Series.new(series_params)
 
     respond_to do |format|
       if @series.save
-        format.html { redirect_to @series, notice: 'Serie was successfully created.' }
+        format.html { redirect_to @series, notice: 'Series was successfully created.' }
         format.json { render action: 'show', status: :created, location: @series }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class SeriesController < ApplicationController
   def update
     respond_to do |format|
       if @series.update(series_params)
-        format.html { redirect_to @series, notice: 'Serie was successfully updated.' }
+        format.html { redirect_to @series, notice: 'Series was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,7 +56,7 @@ class SeriesController < ApplicationController
   def destroy
     @series.destroy
     respond_to do |format|
-      format.html { redirect_to series_url }
+      format.html { redirect_to series_index_url }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class SeriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_series
-      @series = Serie.find(params[:id])
+      @series = Series.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
