@@ -1,23 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div>
   <strong>Title:</strong>
   <%= @series.title %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Genre:</strong>
   <%= @series.genre.title %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Photo:</b>
   <% if @series.has_photo? %>
     <%= image_tag @series.photo_path %>
   <% else %>
     No photo.
   <% end %>
-</p>
+</div>
 
+<%= link_to 'Add season', new_series_season_path(@series) %> |
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>
