@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  season_id: 1
+  number: 1
+  duration: 2014-01-21 16:55:45
+  watched: false
+
+two:
+  title: MyString
+  season_id: 1
+  number: 1
+  duration: 2014-01-21 16:55:45
+  watched: false

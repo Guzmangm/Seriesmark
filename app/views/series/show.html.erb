@@ -7,7 +7,16 @@
 
 <p>
   <strong>Genre:</strong>
-  <%= @series.genre_id %>
+  <%= @series.genre.title %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <% if @series.has_photo? %>
+    <%= image_tag @series.photo_path %>
+  <% else %>
+    No photo.
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_series_path(@series) %> |

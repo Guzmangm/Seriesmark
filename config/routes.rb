@@ -1,7 +1,9 @@
 SeriesMark::Application.routes.draw do
 
   resources :series do
-    resources :seasons
+    resources :seasons do
+	  resources :episodes
+	end
   end
   
   resources :genres do

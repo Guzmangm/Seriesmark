@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121143509) do
+ActiveRecord::Schema.define(version: 20140121160710) do
+
+  create_table "episodes", force: true do |t|
+    t.string   "title"
+    t.integer  "season_id"
+    t.integer  "number"
+    t.boolean  "watched"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "duration"
+  end
 
   create_table "genres", force: true do |t|
     t.string   "title"
@@ -30,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140121143509) do
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "extension"
   end
 
 end
