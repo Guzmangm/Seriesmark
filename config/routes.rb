@@ -1,14 +1,19 @@
 SeriesMark::Application.routes.draw do
 
+  get '/series/next' => 'series#next', :as => 'next_series'
+  
   resources :series do
     resources :seasons do
 	  resources :episodes
 	end
   end
   
-  resources :genres do
-    resources :series
-  end
+  #get '/next/series' => 'series#next', :as => 'nextSeries'
+  
+  
+  resources :genres #do
+    #resources :series
+  #end
 
   root :to => 'series#index'
 

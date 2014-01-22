@@ -1,4 +1,5 @@
 class Season < ActiveRecord::Base
   validates_presence_of :title
-  belongs_to :season
+  has_many :episodes
+  belongs_to :serie
 end

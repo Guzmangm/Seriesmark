@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+ body { margin: 10px; }
+ 
+ header { float: left; width: 17%; height: auto; margin-right:3%;}
+ header img { width: 80%;  }
+ 
+ navigation { clear: left; float: left; width: 17%; margin-right:3%;}
+
+ main { margin-left: 20%; display:block;}
+ 
+ footer { clear: both; text-align: center; margin-top: 75px;}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121160710) do
+ActiveRecord::Schema.define(version: 20140122152507) do
 
   create_table "episodes", force: true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140121160710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "duration"
+    t.boolean  "favorite"
   end
 
   create_table "genres", force: true do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140121160710) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "series_id"
   end
 
   create_table "series", force: true do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140121160710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "extension"
+    t.boolean  "favorite"
   end
 
 end

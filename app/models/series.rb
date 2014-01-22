@@ -2,6 +2,7 @@ class Series < ActiveRecord::Base
 
   validates_presence_of :title
   has_many :seasons
+  has_many :episodes, :through => :seasons
   belongs_to :genre
   
   # after the person has been written to the database, deal with

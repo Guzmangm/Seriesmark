@@ -60,6 +60,10 @@ class EpisodesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def next
+	Episode.find(:all, :conditions => { :watched => false })
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

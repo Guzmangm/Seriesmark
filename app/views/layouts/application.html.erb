@@ -8,7 +8,24 @@
 </head>
 <body>
 
-<%= yield %>
+<header>
+	<img alt="logo de la aplicaci&oacute;n" id="logo" src="/img/SeriesMarkLogo.png" />
+</header>
 
+<navigation>
+	<ul>
+		<li><%= link_to 'Next episodes', next_series_path %></li>
+		<li><%= link_to 'Series', series_index_path %></li>
+		<li><%= link_to 'Genres', genres_path %></li>
+	</ul>
+</navigation>
+
+<main>
+<%= yield %>
+</main>
+
+<footer>
+&copy; 2014 - Guzm&aacute;n Gonz&aacute;lez Men&eacute;ndez 
+</footer>
 </body>
 </html>
