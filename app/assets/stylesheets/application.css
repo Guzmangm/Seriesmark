@@ -23,14 +23,33 @@
  
  footer { clear: both; text-align: center; margin-top: 75px;}
  
+ /* COMUNES */
+ /* line 709, ../sass/partials/_page.scss */
+.button, .button:visited{
+	text-align: right; 
+	float: right; 
+    background: transparent url('/img/btn_122x32-verde.png?1383838253') left top no-repeat;
+    width: 100px;
+    height: 24px;
+    text-align: center;
+	vertical-align:middle;
+	text-decoration: none;
+    border: none;
+    padding: 0;
+    color: #ecf0f1;
+    cursor: pointer;
+	font-weight: bold;
+}
+ 
  /* SERIES */
-  .seriesDivRow { padding: 3px; border-bottom: 1px solid black; height:auto; overflow:auto;}
+  .seriesDivRow { padding: 3px; border-top: 1px solid #aaaaaa; height:auto; overflow:auto;}
  .seriesDivHeader { cursor: pointer; padding: 2px;}
  .seriesDivHeader  img{ width: 20px; height: 20px; float:left; vertical-align: middle;}
  .seriesDivHeader  h2{ float:left; margin: 0 0 0 5px;}
- .seriesDivInfo { clear:both; margin-top: 20px; }
+ .seriesDivHeader  span{ float:right; margin: 0 5px 0 0; color:#cccccc;}
+ .seriesDivInfo { clear:both; margin-top: 30px; }
  .seriesDivInfo  > img{ float:left; max-width: 25%; }
- .seriesDivInfo  h3{ margin-left: 28%; width: 70%; margin-bottom: 0px;}
- .seriesDivInfo  .links{ margin-top: 10px; margin-left: 28%; width: 70%;}
+ .seriesDivInfo  h3{ width: 70%; margin: 5px 0px 0px 28%;}
+ .seriesDivInfo  .links{ margin-top: 10px; margin-left: 28%; width: 70%; margin-top: 6px;}
  .seriesDivInfo  .links a{ margin-right: 10px;}
  

@@ -2,5 +2,30 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @series %> |
+Seasons
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+	  <th>Episodes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @series.seasons.each do |season| %>
+      <tr>
+        <td><%= season.title %></td>
+		<td><%= season.episodes.count.to_s %></td>
+        <td><%= link_to 'Show', season %></td>
+        <td><%= link_to 'Edit', edit_season_path(season) %></td>
+        <td><%= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Seasons', series_seasons_path(@series) %> |
 <%= link_to 'Back', series_index_path %>

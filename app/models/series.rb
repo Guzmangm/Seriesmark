@@ -11,33 +11,37 @@ class Series < ActiveRecord::Base
   after_save :store_photo
   
   # File.join is a cross-platform way of joining directories;
-	# we could have written "#{Rails.root}/public/photo_store"
-	PHOTO_STORE = File.join Rails.root, 'public', 'photo_store'
-	# where to write the image file to
-	def photo_filename
-		File.join PHOTO_STORE, "#{id}.#{extension}"
-	end
-	# return a path we can use in HTML for the image
-	def photo_path
-		"/photo_store/#{id}.#{extension}"
-	end
+  # we could have written "#{Rails.root}/public/photo_store"
+  PHOTO_STORE = File.join Rails.root, 'public', 'photo_store'
+  # where to write the image file to
+  def photo_filename
+  	File.join PHOTO_STORE, "#{id}.#{extension}"
+  end
+  # return a path we can use in HTML for the image
+  def photo_path
+  	"/photo_store/#{id}.#{extension}"
+  end
 
-	# if a photo file exists, then we have a photo
-	def has_photo?
-	File.exists? photo_filename
-	end
+  # if a photo file exists, then we have a photo
+  def has_photo?
+    File.exists? photo_filename
+  end
 
-	# when photo data is assigned via the upload, store the file data
-	# for later and assign the file extension, e.g., ".jpg"
-	def photo=(file_data)
-		unless file_data.blank?
-		# store the uploaded data into a private instance variable
-		@file_data = file_data
-		# figure out the last part of the filename and use this as
-		# the file extension. e.g., from "me.jpg" will return "jpg"
-		self.extension = file_data.original_filename.split('.').last.downcase
-		end
+  # when photo data is assigned via the upload, store the file data
+  # for later and assign the file extension, e.g., ".jpg"
+  def photo=(file_data)
+	unless file_data.blank?
+	# store the uploaded data into a private instance variable
+	@file_data = file_data
+	# figure out the last part of the filename and use this as
+	# the file extension. e.g., from "me.jpg" will return "jpg"
+	self.extension = file_data.original_filename.split('.').last.downcase
 	end
+  end
+
+  def unseen_episodes
+	episodes.find(:all, :conditions => { :watched => false })
+  end
 
   private
   

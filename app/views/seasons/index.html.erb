@@ -15,7 +15,7 @@
       <tr>
         <td><%= season.title %></td>
         <td><%= link_to 'Show', season %></td>
-        <td><%= link_to 'Edit', edit_season_path(season) %></td>
+        <td><%= link_to 'Edit', edit_series_season_path(season) %></td>
         <td><%= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Season', new_season_path %>
+<%= link_to 'New Season', new_series_season_path %>
