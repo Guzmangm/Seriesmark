@@ -8,18 +8,16 @@
 		});
 		
 		$('.seriesDivHeader').click(function(){
-			$(this).siblings('.seriesDivInfo').toggle();
+			$(this).siblings('.seriesDivInfo').slideToggle();
 		});
+		
+		
 	});
 	
 </script>
 
     <% @series.each do |series| %>
-	
 	  <%= seriesRow(series) %>
-      <%= link_to 'Show', series %>
-      <%= link_to 'Edit', edit_series_path(series) %>
-      <%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
 	
 <br>
