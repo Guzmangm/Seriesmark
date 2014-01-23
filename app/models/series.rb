@@ -1,7 +1,7 @@
 class Series < ActiveRecord::Base
 
   validates_presence_of :title
-  has_many :seasons
+  has_many :seasons, :dependent => :destroy
   has_many :episodes, :through => :seasons
   belongs_to :genre
   belongs_to :country
