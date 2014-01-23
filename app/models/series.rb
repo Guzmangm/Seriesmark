@@ -4,6 +4,7 @@ class Series < ActiveRecord::Base
   has_many :seasons
   has_many :episodes, :through => :seasons
   belongs_to :genre
+  belongs_to :country
   
   # after the person has been written to the database, deal with
   # writing any image data to the filesystem

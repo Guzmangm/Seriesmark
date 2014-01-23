@@ -1,5 +1,7 @@
 SeriesMark::Application.routes.draw do
 
+  resources :countries
+
   get '/series/next' => 'series#next', :as => 'next_series'
   
   resources :series do

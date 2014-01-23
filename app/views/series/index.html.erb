@@ -1,29 +1,27 @@
 <h1>Listing series</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Genre</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<script>
+	
+	$(document).ready(function(){
+		$('.seriesDivInfo').each(function(div, r){
+			$(div).hide();
+		});
+		
+		$('.seriesDivHeader').click(function(){
+			$(this).siblings('.seriesDivInfo').toggle();
+		});
+	});
+	
+</script>
 
-  <tbody>
     <% @series.each do |series| %>
-      <tr>
-        <td><%= series.title %></td>
-        <td><%= series.genre_id %></td>
-        <td><%= link_to 'Show', series %></td>
-        <td><%= link_to 'Edit', edit_series_path(series) %></td>
-        <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+	
+	  <%= seriesRow(series) %>
+      <%= link_to 'Show', series %>
+      <%= link_to 'Edit', edit_series_path(series) %>
+      <%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
-
+	
 <br>
 
 <%= link_to 'New Series', new_series_path %>
